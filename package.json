@@ -1,0 +1,24 @@
+{
+  "name": "teacherfeeder",
+  "version": "1.0.0",
+  "description": "readme",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feedmeback/teacherfeeder.git"
+  },
+  "keywords": [
+    "teacher",
+    "student",
+    "feedback"
+  ],
+  "author": "feedmeback",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feedmeback/teacherfeeder/issues"
+  },
+  "homepage": "https://github.com/feedmeback/teacherfeeder#readme"
+}
