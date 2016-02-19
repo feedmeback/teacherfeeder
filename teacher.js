@@ -4,7 +4,6 @@ document.getElementById('submit').addEventListener('click',function(e){
     console.log('helllo');
     e.preventDefault();
     var date = document.getElementById('date').value;
-    var year = document.getElementById('year').value;
     var classCode = document.getElementById('class').value;
     var learningObj1 = document.getElementById('lo1').value;
     var learningObj2 = document.getElementById('lo2').value;
@@ -13,8 +12,8 @@ document.getElementById('submit').addEventListener('click',function(e){
     // 'teacherSub?date=20012016&year=7&classcode=301&lo1=learn what the tudors did&lo2=remeber how many wives Henry killed'
 
     xhr.onreadystatechange = function (){
-        console.log(xhr);
         if(xhr.readyState === 4 && xhr.status === 200){
+            console.log(xhr);
             document.write('Success!!');
         } else {
             console.log('error');

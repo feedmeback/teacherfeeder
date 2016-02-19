@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
-// var classData = require('./classData.js');
-// var studentFeedback = require('./studentFeedback.js');
+var classData = require('./classData.js');
+var studentFeedback = require('./studentFeedback.js');
 
 var port = process.env.PORT || 4000;
 
@@ -22,10 +22,10 @@ function handler(req, res) {
         console.log(teachSub);
         var data = teachSub.split('&');
         console.log(data);
-        var classCode = data[0].split('classcode=');
-        var dateString = data[1].split('date=');
+        var classCode = data[0].split('classcode=')[1];
+        var dateString = data[1].split('date=')[1];
         var objectives = data[2].split('objectives=')[1].split('::');
-                // classData(classCode, dateString, objectives);
+        classData(classCode, dateString, objectives);
         res.writeHead(200, {"Content-type": "text/html"});
         res.end('Thanks, your submission has been successful');
     } else if (url.indexOf('studInp') > -1) {
@@ -34,7 +34,7 @@ function handler(req, res) {
         var classCode1 = data1[0].split('classcode=');
         var dateString1 = data1[1].split('date=');
         var feedbackObj = data1[2].split('objectives=').split('::');
-                // studentFeedback(classCode1, dateString1, feedbackObj);
+        studentFeedback(classCode1, dateString1, feedbackObj);
         res.writeHead(200, {"Content-type": "text/html"});
         res.end('Congrats! You just gained points for your tribe!');
     } else if (url.indexOf('.') > -1){
