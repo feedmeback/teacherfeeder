@@ -1,0 +1,40 @@
+body {
+    background-color: slategray;
+    box-sizing: border-box;
+    font-family: arial;
+}
+form {
+    width: 500px;
+    border:solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: snow;
+    padding: 20px;
+    height: 500px;
+}
+
+input {
+    display: block;
+    margin-top: 30px;
+    height: 20px;
+    width: 200px;
+    font-size: 15px;
+    background-color: snow;
+    box-shadow: none;
+    border: 1px solid grey
+}
+
+h1 {
+    text-align: center;
+}
+
+.lo {
+    width: 500px;
+}
+
+#submit {
+    width: 500px;
+    font-size: 20px;
+    height: 40px
+}
