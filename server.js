@@ -30,11 +30,15 @@ function handler(req, res) {
         res.end('Thanks, your submission has been successful');
     } else if (url.indexOf('studInp') > -1) {
         var studInp = url.split('studInp?')[1];
-        var data1 = studInp.split('&');
-        var classCode1 = data1[0].split('classcode=');
-        var dateString1 = data1[1].split('date=');
-        var feedbackObj = data1[2].split('objectives=').split('::');
-                // studentFeedback(classCode1, dateString1, feedbackObj);
+        var dataArr = studInp.split('&');
+        var classCode1 = dataArr[0].split('classcode=')[1];
+        var dateString1 = dataArr[1].split('date=')[1];
+        var engagement = dataArr[2].split('engagement=')[1];
+        var satisfaction = dataArr[3].split('satisfaction=')[1];
+        var support = dataArr[4].split('support=')[1];
+        var feedbackObj = {"engagement":engagement, "satisfaction":satisfaction, "support":support};
+
+        studentFeedback(classCode1, dateString1, feedbackObj);
         res.writeHead(200, {"Content-type": "text/html"});
         res.end('Congrats! You just gained points for your tribe!');
     } else if (url.indexOf('.') > -1){
