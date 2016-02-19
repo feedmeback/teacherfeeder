@@ -28,6 +28,14 @@ function handler(req, res) {
         classData(classCode, dateString, objectives);
         res.writeHead(200, {"Content-type": "text/html"});
         res.end('Thanks, your submission has been successful');
+    } else if (url.indexOf('studForm') > -1 ) {
+        fs.readFile(__dirname + '/student.html', function(error, index){
+            if (error) {
+                res.end();
+            } else {
+                res.end(index);
+            }
+        });
     } else if (url.indexOf('studInp') > -1) {
         var studInp = url.split('studInp?')[1];
         var dataArr = studInp.split('&');
