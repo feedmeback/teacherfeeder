@@ -13,9 +13,9 @@ document.getElementById('submit').addEventListener('click',function(e){
     // 'teacherSub?date=20012016&year=7&classcode=301&lo1=learn what the tudors did&lo2=remeber how many wives Henry killed'
 
     xhr.onreadystatechange = function (){
+
         if(xhr.readyState === 4 && xhr.status === 200){
-            //document.write('Success!!');
-            console.log(xhr.responseText);
+            document.write('Success!!');
         } else {
             console.log('error');
         }
