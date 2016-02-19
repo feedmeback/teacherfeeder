@@ -23,7 +23,7 @@ function handler(req, res) {
         var data = teachSub.split('&');
         console.log(data);
         var classCode = data[0].split('classcode=');
-        var dateString = data[1].split('date=')
+        var dateString = data[1].split('date=');
         var objectives = data[2].split('objectives=').split('::');
                 classData(classCode, dateString, objectives);
         res.writeHead(200, {"Content-type": "text/html"});
