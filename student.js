@@ -19,7 +19,7 @@ document.getElementById('submit').addEventListener('click',function(e){
     var support = document.getElementById('support').value;
 
 
-    var query = 'classcode=' + 'Math101' + '&date=19022016' + '&engagement=' + engagement + '&satisfaction=' + satisfaction + '&support=' + support;
+    var query = 'classcode=' + 'Math101' + '&date=19/02/16' + '&engagement=' + engagement + '&satisfaction=' + satisfaction + '&support=' + support;
     xhr.open('GET', '/studInp?' + query);
     xhr.send();
 

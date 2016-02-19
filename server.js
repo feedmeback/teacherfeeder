@@ -2,6 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var classData = require('./classData.js');
 var studentFeedback = require('./studentFeedback.js');
+var calculation = require('./calculation.js');
 
 var port = process.env.PORT || 4000;
 
@@ -60,6 +61,18 @@ function handler(req, res) {
 			    res.end(file);
   			}
 		});
+    } else if (url.indexOf('/display') > -1 ){
+        fs.readFile(__dirname +'/display.html',function(error, file){
+            res.writeHead(200, {"Content-type": "text/html"});
+            res.end(file);
+        });
+    } else if( url.indexOf('/results')>-1 ){
+        console.log('calculating');
+        calculation = JSON.stringify(calculation)
+        console.log(calculation);
+
+        res.writeHead(200, {"Content-type": "text/html"});
+        res.end(calculation);
     }
 }
 

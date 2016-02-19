@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CLASS RESULTS</title>
+    </head>
+    <body>
+        <h1>CLASS RESULTS FOR MATH101</h1>
+        <table>
+            <th>SATISFACTION</th>
+            <th>SUPPORT</th>
+            <th>ENGAGEMENT</th>
+            <tr id="results"></tr>
+        </table>
+        <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(res){
+                if(xhr.readyState===4 && xhr.status === 200){
+                    console.log(xhr.responseText);
+                    var resObj = JSON.parse(xhr.responseText);
+                    var resultsRow = document.getElementById('results');
+
+                    var engagementCell = document.createElement('td');
+                    engagementCell.innerHTML = resObj.engagement;
+
+                    var satisfactionCell = document.createElement('td');
+                    satisfactionCell.innerHTML = resObj.satisfaction;
+
+                    var supportCell = document.createElement('td');
+                    supportCell.innerHTML = resObj.support;
+
+                    resultsRow.appendChild(engagementCell);
+                    resultsRow.appendChild(satisfactionCell);
+                    resultsRow.appendChild(supportCell);
+                }
+            }
+            xhr.open('GET','/results');
+            xhr.send();
+        </script>
+    </body>
+</html>
