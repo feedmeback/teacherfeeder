@@ -18,8 +18,8 @@ function updateClassInfo( classCode, dateString, objectivesArr ){
         // create a new entry in the students' feedback "database"
         studentFeedback[classCode][dateString] = {
             "satisfaction":[],
-            "confusion":[],
-            "param3":[]
+            "engagment":[],
+            "support":[]
         };
         console.log(studentFeedback);
         var newStudentFeedback = JSON.stringify(studentFeedback);

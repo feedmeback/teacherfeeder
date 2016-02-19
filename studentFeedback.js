@@ -5,10 +5,10 @@ function updateStudentData( classCode, dateString, feedbackObj ){
     // run function only if classCode exists and if teacher has entered data for the specific date
     if( studentFeedback[classCode][dateString] ){
         // add the values in the respective json arrays
-        studentFeedback[dateString].satisfaction.push( studentFeedbackObj.satisfaction );
-        studentFeedback[dateString].engagement.push( studentFeedbackObj.engagement );
-        studentFeedback[dateString].support.push( studentFeedbackObj.support );
-        var newStudentfeedback = JSON.stringify( studentFeedback )
+        studentFeedback[classCode][dateString].satisfaction.push( feedbackObj.satisfaction );
+        studentFeedback[classCode][dateString].engagement.push( feedbackObj.engagement );
+        studentFeedback[classCode][dateString].support.push( feedbackObj.support );
+        var newStudentFeedback = JSON.stringify( studentFeedback )
         // update the json file with the updated students object
         fs.writeFile('students.json', newStudentFeedback, function(error){
             if( error ) throw error;
