@@ -1,6 +1,9 @@
 var fs = require('fs');
 
 function updateClassInfo( classCode, dateString, objectivesArr ){
+    console.log('updateClass is running');
+    console.log(classCode);
+    console.log(objectivesArr);
     var classesInfo = require('./classesInfo.json');
     var studentFeedback = require('./students.json');
 
@@ -18,7 +21,7 @@ function updateClassInfo( classCode, dateString, objectivesArr ){
         // create a new entry in the students' feedback "database"
         studentFeedback[classCode][dateString] = {
             "satisfaction":[],
-            "engagment":[],
+            "engagement":[],
             "support":[]
         };
         console.log(studentFeedback);
@@ -34,4 +37,4 @@ function updateClassInfo( classCode, dateString, objectivesArr ){
 
 module.exports = updateClassInfo;
 
-updateClassInfo( 'classCode1', "2016-02-15", ["objective1","objective2"] );
+// updateClassInfo( 'classCode1', "2016-02-15", ["objective1","objective2"] );

@@ -1,6 +1,7 @@
 var fs = require('fs');
 
 function updateStudentData( classCode, dateString, feedbackObj ){
+    console.log('student data running');
     var studentFeedback = require('./students.json');
     // run function only if classCode exists and if teacher has entered data for the specific date
     if( studentFeedback[classCode][dateString] ){
@@ -17,6 +18,6 @@ function updateStudentData( classCode, dateString, feedbackObj ){
     } else { console.log( 'classCode or date is not stored yet.')}
 }
 
-updateStudentData( "classCode1", "2016-02-15",{"satisfaction":5,"engagement":2,"support":1} );
+// updateStudentData( "classCode1", "2016-02-15",{"satisfaction":5,"engagement":2,"support":1} );
 
 module.exports = updateStudentData;
